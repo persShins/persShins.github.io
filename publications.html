@@ -157,6 +157,16 @@
       margin-bottom: 8px;
     }
 
+    .publication-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .publication-title a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
     .publication-authors,
     .publication-venue,
     .publication-description {
@@ -219,6 +229,110 @@
       font-size: 0.9rem;
     }
 
+
+
+    .publication {
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: var(--shadow);
+    }
+
+    .publication-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .details-toggle {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .details-toggle:hover {
+      border-color: var(--primary);
+    }
+
+    .publication-details {
+      grid-column: 1 / -1;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      border-top: 0 solid transparent;
+      transition: max-height 0.28s ease, opacity 0.22s ease, margin-top 0.22s ease, padding-top 0.22s ease, border-color 0.22s ease;
+    }
+
+    .publication.open .publication-details {
+      max-height: 900px;
+      opacity: 1;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.75fr);
+      gap: 18px;
+    }
+
+    .detail-panel {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .detail-panel h3 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .detail-panel p,
+    .detail-panel li {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .detail-panel ul {
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+
+    .bibtex-box {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #111827;
+      color: #e5e7eb;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .copy-status {
+      margin-top: 8px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      min-height: 1.2em;
+    }
+
     @media (max-width: 850px) {
       .nav-links {
         display: none;
@@ -228,8 +342,13 @@
         padding: 48px 0;
       }
 
-      .publication-with-image {
+      .publication-with-image,
+      .detail-grid {
         grid-template-columns: 1fr;
+      }
+
+      .publication-heading {
+        flex-direction: column;
       }
 
       .publication-image {
@@ -268,7 +387,7 @@
     </div>
 
     <div class="publication-list">
-      <article class="publication publication-with-image">
+      <article class="publication publication-with-image" tabindex="0" aria-expanded="false">
         <img
           class="publication-image"
           src="Armor.png"
@@ -276,16 +395,24 @@
         />
 
         <div class="publication-content">
-          <div class="publication-title">
-            ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks
-          </div>
+          <div class="publication-heading">
+            <div>
+              <div class="publication-title">
+                <a href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">
+                  ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks
+                </a>
+              </div>
 
-          <div class="publication-authors">
-            <strong>WonGeun Shin</strong>, JeongHwan Lee, Sangyun Jung, HeeSeok Kim
-          </div>
+              <div class="publication-authors">
+                <strong>WonGeun Shin</strong>, JeongHwan Lee, Sangyun Jung, HeeSeok Kim
+              </div>
 
-          <div class="publication-venue">
-            <strong>CHES 2026</strong>, To appear.
+              <div class="publication-venue">
+                <strong>CHES 2026</strong>, To appear.
+              </div>
+            </div>
+
+            <button class="details-toggle" type="button" aria-label="Show publication details">Details +</button>
           </div>
 
           <div class="publication-description">
@@ -293,13 +420,49 @@
           </div>
 
           <div class="publication-links">
-            <a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131">Paper</a>
-            <a class="button" href="https://github.com/persShins/ARMOR">Code</a>
+            <a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">Paper</a>
+            <a class="button" href="https://github.com/persShins/ARMOR" target="_blank" rel="noopener">Code</a>
+            <button class="button bibtex-copy" type="button">Copy BibTeX</button>
           </div>
 
           <div class="tags">
             <span class="tag">Masking</span>
             <span class="tag">Binarized Neural Networks</span>
+            <span class="tag">Side-Channel Resistance</span>
+          </div>
+        </div>
+
+        <div class="publication-details" aria-hidden="true">
+          <div class="detail-grid">
+            <div class="detail-panel">
+              <h3>Abstract / Summary</h3>
+              <p>
+                This paper studies first-order masking for neural-network components that are difficult to protect against side-channel leakage, especially activation and ArgMax gadgets.
+                The work targets side-channel resistant neural network implementations and provides practical masked building blocks for secure inference.
+              </p>
+
+              <h3 style="margin-top: 14px;">Key Points</h3>
+              <ul>
+                <li>Designs first-order masked activation and ArgMax gadgets.</li>
+                <li>Focuses on side-channel resistant neural network implementations.</li>
+                <li>Provides implementation-oriented countermeasures for cryptographic and embedded-security settings.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3>Publication Info</h3>
+              <p><strong>Venue:</strong> CHES 2026, To appear.</p>
+              <p><strong>Authors:</strong> WonGeun Shin, JeongHwan Lee, Sangyun Jung, HeeSeok Kim</p>
+              <p><strong>DOI:</strong> 10.46586/tches.v2026.i2.106-131</p>
+
+              <div class="bibtex-box" data-bibtex="@inproceedings{shin2026armor,&#10;  title={ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks},&#10;  author={Shin, WonGeun and Lee, JeongHwan and Jung, Sangyun and Kim, HeeSeok},&#10;  booktitle={CHES},&#10;  year={2026}&#10;}">@inproceedings{shin2026armor,
+  title={ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks},
+  author={Shin, WonGeun and Lee, JeongHwan and Jung, Sangyun and Kim, HeeSeok},
+  booktitle={CHES},
+  year={2026}
+}</div>
+              <div class="copy-status" aria-live="polite"></div>
+            </div>
           </div>
         </div>
       </article>
@@ -355,6 +518,59 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    document.querySelectorAll(".publication").forEach((card) => {
+      const toggle = card.querySelector(".details-toggle");
+      const details = card.querySelector(".publication-details");
+      const copyButton = card.querySelector(".bibtex-copy");
+      const bibtexBox = card.querySelector(".bibtex-box");
+      const status = card.querySelector(".copy-status");
+
+      function setOpen(open) {
+        card.classList.toggle("open", open);
+        card.setAttribute("aria-expanded", String(open));
+        if (details) details.setAttribute("aria-hidden", String(!open));
+        if (toggle) toggle.textContent = open ? "Details −" : "Details +";
+      }
+
+      function toggleCard() {
+        setOpen(!card.classList.contains("open"));
+      }
+
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a") || event.target.closest(".bibtex-copy")) return;
+        toggleCard();
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleCard();
+        }
+      });
+
+      if (toggle) {
+        toggle.addEventListener("click", (event) => {
+          event.stopPropagation();
+          toggleCard();
+        });
+      }
+
+      if (copyButton && bibtexBox) {
+        copyButton.addEventListener("click", async (event) => {
+          event.stopPropagation();
+          const text = bibtexBox.dataset.bibtex || bibtexBox.textContent;
+          try {
+            await navigator.clipboard.writeText(text);
+            if (status) status.textContent = "BibTeX copied.";
+          } catch (error) {
+            if (status) status.textContent = "Copy failed. Please copy it manually.";
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
