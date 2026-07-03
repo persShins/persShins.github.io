@@ -125,6 +125,14 @@
       border-radius: 22px;
       padding: 24px;
       box-shadow: 0 5px 15px rgba(15, 23, 42, 0.04);
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: var(--shadow);
     }
 
     .publication-with-image {
@@ -227,19 +235,6 @@
       padding: 28px 0;
       color: var(--muted);
       font-size: 0.9rem;
-    }
-
-
-
-    .publication {
-      cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    }
-
-    .publication:hover {
-      transform: translateY(-2px);
-      border-color: rgba(37, 99, 235, 0.35);
-      box-shadow: var(--shadow);
     }
 
     .publication-heading {
@@ -467,8 +462,13 @@
         </div>
       </article>
 
-      
-            <article class="publication" tabindex="0" aria-expanded="false">
+      <article class="publication publication-with-image" tabindex="0" aria-expanded="false">
+        <img
+          class="publication-image"
+          src="PublicCoefficient.png"
+          alt="Public Coefficient Matters paper preview image"
+        />
+
         <div class="publication-content">
           <div class="publication-heading">
             <div>
@@ -542,6 +542,7 @@
           </div>
         </div>
       </article>
+
       <!-- Add more publications below by copying this block.
 
       <article class="publication publication-with-image">
