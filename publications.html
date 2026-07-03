@@ -158,6 +158,13 @@
       min-width: 0;
     }
 
+    .publication-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
     .publication-title {
       font-weight: 800;
       font-size: 1.12rem;
@@ -212,36 +219,6 @@
       border-color: var(--primary);
       color: var(--primary);
       text-decoration: none;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .publication-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-start;
     }
 
     .details-toggle {
@@ -328,6 +305,29 @@
       min-height: 1.2em;
     }
 
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 850px) {
       .nav-links {
         display: none;
@@ -382,86 +382,6 @@
     </div>
 
     <div class="publication-list">
-      <article class="publication publication-with-image" tabindex="0" aria-expanded="false">
-        <img
-          class="publication-image"
-          src="Armor.png"
-          alt="ARMOR paper preview image"
-        />
-
-        <div class="publication-content">
-          <div class="publication-heading">
-            <div>
-              <div class="publication-title">
-                <a href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">
-                  ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks
-                </a>
-              </div>
-
-              <div class="publication-authors">
-                <strong>WonGeun Shin</strong>, JeongHwan Lee, Sangyun Jung, HeeSeok Kim
-              </div>
-
-              <div class="publication-venue">
-                <strong>CHES 2026</strong>, To appear.
-              </div>
-            </div>
-
-            <button class="details-toggle" type="button" aria-label="Show publication details">Details +</button>
-          </div>
-
-          <div class="publication-description">
-            First-order masking techniques for activation and ArgMax gadgets in side-channel resistant neural network implementations.
-          </div>
-
-          <div class="publication-links">
-            <a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">Paper</a>
-            <a class="button" href="https://github.com/persShins/ARMOR" target="_blank" rel="noopener">Code</a>
-            <button class="button bibtex-copy" type="button">Copy BibTeX</button>
-          </div>
-
-          <div class="tags">
-            <span class="tag">Masking</span>
-            <span class="tag">Binarized Neural Networks</span>
-            <span class="tag">Side-Channel Resistance</span>
-          </div>
-        </div>
-
-        <div class="publication-details" aria-hidden="true">
-          <div class="detail-grid">
-            <div class="detail-panel">
-              <h3>Abstract / Summary</h3>
-              <p>
-                This paper studies first-order masking for neural-network components that are difficult to protect against side-channel leakage, especially activation and ArgMax gadgets.
-                The work targets side-channel resistant neural network implementations and provides practical masked building blocks for secure inference.
-              </p>
-
-              <h3 style="margin-top: 14px;">Key Points</h3>
-              <ul>
-                <li>Designs first-order masked activation and ArgMax gadgets.</li>
-                <li>Focuses on side-channel resistant neural network implementations.</li>
-                <li>Provides implementation-oriented countermeasures for cryptographic and embedded-security settings.</li>
-              </ul>
-            </div>
-
-            <div class="detail-panel">
-              <h3>Publication Info</h3>
-              <p><strong>Venue:</strong> CHES 2026, To appear.</p>
-              <p><strong>Authors:</strong> WonGeun Shin, JeongHwan Lee, Sangyun Jung, HeeSeok Kim</p>
-              <p><strong>DOI:</strong> 10.46586/tches.v2026.i2.106-131</p>
-
-              <div class="bibtex-box" data-bibtex="@inproceedings{shin2026armor,&#10;  title={ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks},&#10;  author={Shin, WonGeun and Lee, JeongHwan and Jung, Sangyun and Kim, HeeSeok},&#10;  booktitle={CHES},&#10;  year={2026}&#10;}">@inproceedings{shin2026armor,
-  title={ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks},
-  author={Shin, WonGeun and Lee, JeongHwan and Jung, Sangyun and Kim, HeeSeok},
-  booktitle={CHES},
-  year={2026}
-}</div>
-              <div class="copy-status" aria-live="polite"></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
       <article class="publication publication-with-image" tabindex="0" aria-expanded="false">
         <img
           class="publication-image"
@@ -536,6 +456,86 @@
   howpublished={IACR Cryptology ePrint Archive, Report 2026/1344},
   year={2026},
   url={https://eprint.iacr.org/2026/1344}
+}</div>
+              <div class="copy-status" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="publication publication-with-image" tabindex="0" aria-expanded="false">
+        <img
+          class="publication-image"
+          src="Armor.png"
+          alt="ARMOR paper preview image"
+        />
+
+        <div class="publication-content">
+          <div class="publication-heading">
+            <div>
+              <div class="publication-title">
+                <a href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">
+                  ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks
+                </a>
+              </div>
+
+              <div class="publication-authors">
+                <strong>WonGeun Shin</strong>, JeongHwan Lee, Sangyun Jung, HeeSeok Kim
+              </div>
+
+              <div class="publication-venue">
+                <strong>CHES 2026</strong>, To appear.
+              </div>
+            </div>
+
+            <button class="details-toggle" type="button" aria-label="Show publication details">Details +</button>
+          </div>
+
+          <div class="publication-description">
+            First-order masking techniques for activation and ArgMax gadgets in side-channel resistant neural network implementations.
+          </div>
+
+          <div class="publication-links">
+            <a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">Paper</a>
+            <a class="button" href="https://github.com/persShins/ARMOR" target="_blank" rel="noopener">Code</a>
+            <button class="button bibtex-copy" type="button">Copy BibTeX</button>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Masking</span>
+            <span class="tag">Binarized Neural Networks</span>
+            <span class="tag">Side-Channel Resistance</span>
+          </div>
+        </div>
+
+        <div class="publication-details" aria-hidden="true">
+          <div class="detail-grid">
+            <div class="detail-panel">
+              <h3>Abstract / Summary</h3>
+              <p>
+                This paper studies first-order masking for neural-network components that are difficult to protect against side-channel leakage, especially activation and ArgMax gadgets.
+                The work targets side-channel resistant neural network implementations and provides practical masked building blocks for secure inference.
+              </p>
+
+              <h3 style="margin-top: 14px;">Key Points</h3>
+              <ul>
+                <li>Designs first-order masked activation and ArgMax gadgets.</li>
+                <li>Focuses on side-channel resistant neural network implementations.</li>
+                <li>Provides implementation-oriented countermeasures for cryptographic and embedded-security settings.</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h3>Publication Info</h3>
+              <p><strong>Venue:</strong> CHES 2026, To appear.</p>
+              <p><strong>Authors:</strong> WonGeun Shin, JeongHwan Lee, Sangyun Jung, HeeSeok Kim</p>
+              <p><strong>DOI:</strong> 10.46586/tches.v2026.i2.106-131</p>
+
+              <div class="bibtex-box" data-bibtex="@inproceedings{shin2026armor,&#10;  title={ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks},&#10;  author={Shin, WonGeun and Lee, JeongHwan and Jung, Sangyun and Kim, HeeSeok},&#10;  booktitle={CHES},&#10;  year={2026}&#10;}">@inproceedings{shin2026armor,
+  title={ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks},
+  author={Shin, WonGeun and Lee, JeongHwan and Jung, Sangyun and Kim, HeeSeok},
+  booktitle={CHES},
+  year={2026}
 }</div>
               <div class="copy-status" aria-live="polite"></div>
             </div>
