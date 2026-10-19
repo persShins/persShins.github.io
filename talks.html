@@ -23,6 +23,7 @@
     h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -.04em; margin-bottom: 16px; }
     .intro { color: var(--muted); font-size: 1.1rem; margin-bottom: 36px; }
     .talk { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+    .talk + .talk { margin-top: 24px; }
     .talk time { display: block; color: var(--primary); font-weight: 700; margin-bottom: 10px; }
     .talk h2 { font-size: 1.4rem; line-height: 1.4; margin-bottom: 12px; overflow-wrap: anywhere; }
     .talk p { color: var(--muted); margin-bottom: 12px; }
@@ -53,6 +54,15 @@
   <main class="container" id="main-content">
     <h1>Talks</h1>
     <p class="intro">Talks and tutorials on side-channel analysis and implementation security.</p>
+    <article class="talk" id="armor-ches-2026">
+      <time datetime="2026-10-12">October 12, 2026</time>
+      <h2>ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks</h2>
+      <p>Won Geun Shin · Korea University</p>
+      <p>CHES 2026 · Antalya, Türkiye<br />Session 4C: High-speed masking</p>
+      <a class="button" href="https://ches.iacr.org/2026/program.php" target="_blank" rel="noopener">Conference program</a>
+      <a class="button" href="https://iacr.org/submit/files/slides/2026/tches/tches2026/2_14/2_14_slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+      <a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">Paper</a>
+    </article>
     <article class="talk" id="side-channel-tutorial-2025">
       <time datetime="2025-07-01">July 1, 2025</time>
       <h2>Side-Channel Countermeasures and Security Evaluation</h2>
