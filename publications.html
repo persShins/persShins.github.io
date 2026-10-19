@@ -415,6 +415,7 @@
             <a class="button" href="https://eprint.iacr.org/2026/1344" target="_blank" rel="noopener">Paper</a>
             <button class="button bibtex-copy" type="button">Copy BibTeX</button>
           </div>
+          <div class="copy-status" role="status" aria-live="polite"></div>
 
           <div class="tags">
             <span class="tag">Fault Attack</span>
@@ -454,7 +455,6 @@
   year={2026},
   url={https://eprint.iacr.org/2026/1344}
 }</div>
-              <div class="copy-status" aria-live="polite"></div>
             </div>
           </div>
         </div>
@@ -497,6 +497,7 @@
             <a class="button" href="https://github.com/persShins/ARMOR" target="_blank" rel="noopener">Code</a>
             <button class="button bibtex-copy" type="button">Copy BibTeX</button>
           </div>
+          <div class="copy-status" role="status" aria-live="polite"></div>
 
           <div class="tags">
             <span class="tag">Masking</span>
@@ -534,7 +535,6 @@
   journal={IACR Transactions on Cryptographic Hardware and Embedded Systems},
   year={2026}
 }</div>
-              <div class="copy-status" aria-live="polite"></div>
             </div>
           </div>
         </div>
@@ -630,12 +630,13 @@
       if (copyButton && bibtexBox) {
         copyButton.addEventListener("click", async (event) => {
           event.stopPropagation();
-          setOpen(true);
+
           const text = bibtexBox.dataset.bibtex || bibtexBox.textContent;
           try {
             await navigator.clipboard.writeText(text);
             if (status) status.textContent = "BibTeX copied.";
           } catch (error) {
+            setOpen(true);
             if (status) status.textContent = "Copy failed. Please copy it manually.";
           }
         });
