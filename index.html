@@ -91,10 +91,7 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 48px;
-      align-items: center;
+      display: block;
       padding: 80px 0 60px;
     }
 
@@ -116,49 +113,6 @@
       color: var(--text);
     }
 
-    .profile-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .profile-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-      margin: 0 auto 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 3rem;
-      font-weight: 800;
-    }
-
-    .profile-card h2 {
-      text-align: center;
-      font-size: 1.35rem;
-      margin-bottom: 6px;
-    }
-
-    .profile-card p {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a,
     .button {
       display: inline-flex;
       align-items: center;
@@ -173,7 +127,6 @@
       text-decoration: none;
     }
 
-    .social-links a:hover,
     .button:hover {
       border-color: var(--primary);
       color: var(--primary);
@@ -351,18 +304,11 @@
           <a class="button primary" href="publications.html">View Publications</a>
           <a class="button" href="Academic_CV_SHIN.pdf">Download CV</a>
           <a class="button" href="mailto:shinryan9@korea.ac.kr">Email Me</a>
+          <a class="button" href="https://github.com/persShins" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="https://scholar.google.com/citations?user=Z7xED00AAAAJ" target="_blank" rel="noopener"><svg class="scholar-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><text x="15" y="27" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" fill="currentColor">g</text><path d="M2 7 16 1l14 6-14 6L2 7Zm7 5v4c4 3 10 3 14 0v-4l-7 3-7-3Z" fill="currentColor"></path><path d="M28 8v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>Google Scholar</a>
         </div>
       </div>
 
-      <aside class="profile-card">
-        <div class="profile-image">WG</div>
-        <h2>WonGeun Shin</h2>
-        <p>Ph.D. Candidate<br />Korea University</p>
-        <div class="social-links">
-          <a href="https://github.com/persShins" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://scholar.google.com/citations?user=Z7xED00AAAAJ" target="_blank" rel="noopener"><svg class="scholar-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><text x="15" y="27" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" fill="currentColor">g</text><path d="M2 7 16 1l14 6-14 6L2 7Zm7 5v4c4 3 10 3 14 0v-4l-7 3-7-3Z" fill="currentColor"></path><path d="M28 8v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>Google Scholar</a>
-        </div>
-      </aside>
     </section>
 
     <section id="publications">
