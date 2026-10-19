@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talks | WonGeun Shin</title>
+  <meta name="description" content="Talks and tutorials by WonGeun Shin on side-channel analysis and implementation security." />
+  <style>
+    :root { --bg: #f8fafc; --card: #fff; --text: #111827; --muted: #6b7280; --line: #e5e7eb; --primary: #2563eb; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 50; background: rgba(248,250,252,.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+    .logo { color: var(--text); font-weight: 800; font-size: 1.1rem; }
+    .nav-links { display: flex; gap: 22px; font-size: .95rem; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--primary); }
+    main { min-height: calc(100vh - 154px); padding: 64px 0; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -.04em; margin-bottom: 16px; }
+    .intro { color: var(--muted); font-size: 1.1rem; margin-bottom: 36px; }
+    .talk { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+    .talk time { display: block; color: var(--primary); font-weight: 700; margin-bottom: 10px; }
+    .talk h2 { font-size: 1.4rem; line-height: 1.4; margin-bottom: 12px; overflow-wrap: anywhere; }
+    .talk p { color: var(--muted); margin-bottom: 12px; }
+    .button { display: inline-flex; padding: 10px 14px; margin-top: 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: .9rem; font-weight: 700; }
+    .button:hover { color: var(--primary); border-color: var(--primary); text-decoration: none; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 850px) { main { padding: 40px 0; } .talk { padding: 22px; } }
+  </style>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="index.html">WonGeun Shin</a>
+        <div class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#research">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="talks.html" aria-current="page">Talks</a>
+          <a href="index.html#projects">Code</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container" id="main-content">
+    <h1>Talks</h1>
+    <p class="intro">Talks and tutorials on side-channel analysis and implementation security.</p>
+    <article class="talk" id="side-channel-tutorial-2025">
+      <time datetime="2025-07-01">July 1, 2025</time>
+      <h2>Side-Channel Countermeasures and Security Evaluation</h2>
+      <p>Won Geun Shin · Korea University</p>
+      <p>Side Channel Analysis Tutorial<br />8th Workshop on Side-Channel Information Analysis</p>
+      <a class="button" href="https://manuscriptlink.com/society/kiisc/homepage/bbs/nn/article/4212" target="_blank" rel="noopener">Official event page</a>
+    </article>
+  </main>
+  <footer><div class="container">© <span id="year"></span> WonGeun Shin. Built with GitHub Pages.</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
