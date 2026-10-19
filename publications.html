@@ -113,6 +113,11 @@
       max-width: 780px;
     }
 
+    .publication-tabs { display: flex; gap: 12px; margin-bottom: 24px; }
+    .publication-tabs[hidden], .publication-list[hidden] { display: none; }
+    .publication-tabs .button { padding: 10px 20px; font-size: 1rem; }
+    .publication-tabs .button[aria-selected="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+
     .publication-list {
       display: flex;
       flex-direction: column;
@@ -384,9 +389,11 @@
       </p>
     </div>
 
-    <p class="publication-description" style="margin-bottom: 24px;">For Korean-language publications, English titles follow the CV; Korean titles follow the linked publication records or conference programs.</p>
-
-    <div class="publication-list">
+    <div class="publication-tabs" role="tablist" aria-label="Publication category" hidden>
+      <button class="button" type="button" role="tab" id="tab-international" aria-controls="international" aria-selected="true">International</button>
+      <button class="button" type="button" role="tab" id="tab-domestic" aria-controls="domestic" aria-selected="false" tabindex="-1">Domestic</button>
+    </div>
+    <div class="publication-list" id="international" role="tabpanel" aria-labelledby="tab-international" tabindex="0">
       <article class="publication" id="public-coefficient">
 
         <div class="publication-content">
@@ -551,40 +558,6 @@
         </div>
       </article>
 
-      <article class="publication" id="leakage-assessment-2025">
-        <div class="publication-content">
-          <div class="publication-heading">
-            <div>
-              <div class="publication-title"><a href="https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf#page=7" target="_blank" rel="noopener">Optimizing Side-Channel Leakage Assessment with Accumulated Distributed Algorithms</a></div>
-              <p class="publication-description" lang="ko">누적 분산 알고리즘을 통한 부채널 누수 평가 최적화</p>
-              <div class="publication-authors"><strong>Won Geun Shin</strong>, Seunghyeon Jeon, HeeSeok Kim</div>
-              <div class="publication-venue">CISC-W 2025 · Domestic conference · November 27–28, 2025</div>
-            </div>
-            <button class="details-toggle" type="button" aria-expanded="false">Details +</button>
-          </div>
-          <div class="publication-links">
-            <a class="button" href="https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf#page=7" target="_blank" rel="noopener">Conference program</a>
-            <button class="button bibtex-copy" type="button">Copy BibTeX</button>
-          </div>
-          <div class="copy-status" role="status" aria-live="polite"></div>
-          <div class="tags"><span class="tag">Side-Channel Analysis</span><span class="tag">Leakage Assessment</span></div>
-        </div>
-        <div class="publication-details" hidden>
-          <div class="detail-panel">
-            <h3>Publication Info &amp; BibTeX</h3>
-            <p>Listed as paper 265 in the official conference program. The linked document is the program, not the paper full text.</p>
-            <div class="bibtex-box" data-bibtex="@inproceedings{shin2025leakage,&#10;  title={누적 분산 알고리즘을 통한 부채널 누수 평가 최적화},&#10;  author={신원근 and 전승현 and 김희석},&#10;  booktitle={2025년 한국정보보호학회 동계학술대회 (CISC-W 2025)},&#10;  year={2025},&#10;  note={In Korean; English title in author CV: Optimizing Side-Channel Leakage Assessment with Accumulated Distributed Algorithms},&#10;  url={https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf}&#10;}">@inproceedings{shin2025leakage,
-  title={누적 분산 알고리즘을 통한 부채널 누수 평가 최적화},
-  author={신원근 and 전승현 and 김희석},
-  booktitle={2025년 한국정보보호학회 동계학술대회 (CISC-W 2025)},
-  year={2025},
-  note={In Korean; English title in author CV: Optimizing Side-Channel Leakage Assessment with Accumulated Distributed Algorithms},
-  url={https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf}
-}</div>
-          </div>
-        </div>
-      </article>
-
       <article class="publication" id="password-guessing-2024">
         <div class="publication-content">
           <div class="publication-heading">
@@ -616,6 +589,42 @@
   year={2024},
   doi={10.1109/SVCC61185.2024.10637306},
   url={https://doi.org/10.1109/SVCC61185.2024.10637306}
+}</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="publication-list" id="domestic" role="tabpanel" aria-labelledby="tab-domestic" tabindex="0">
+      <p class="publication-description">For Korean-language publications, English titles follow the CV; Korean titles follow the linked publication records or conference programs.</p>
+      <article class="publication" id="leakage-assessment-2025">
+        <div class="publication-content">
+          <div class="publication-heading">
+            <div>
+              <div class="publication-title"><a href="https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf#page=7" target="_blank" rel="noopener">Optimizing Side-Channel Leakage Assessment with Accumulated Distributed Algorithms</a></div>
+              <p class="publication-description" lang="ko">누적 분산 알고리즘을 통한 부채널 누수 평가 최적화</p>
+              <div class="publication-authors"><strong>Won Geun Shin</strong>, Seunghyeon Jeon, HeeSeok Kim</div>
+              <div class="publication-venue">CISC-W 2025 · Domestic conference · November 27–28, 2025</div>
+            </div>
+            <button class="details-toggle" type="button" aria-expanded="false">Details +</button>
+          </div>
+          <div class="publication-links">
+            <a class="button" href="https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf#page=7" target="_blank" rel="noopener">Conference program</a>
+            <button class="button bibtex-copy" type="button">Copy BibTeX</button>
+          </div>
+          <div class="copy-status" role="status" aria-live="polite"></div>
+          <div class="tags"><span class="tag">Side-Channel Analysis</span><span class="tag">Leakage Assessment</span></div>
+        </div>
+        <div class="publication-details" hidden>
+          <div class="detail-panel">
+            <h3>Publication Info &amp; BibTeX</h3>
+            <p>Listed as paper 265 in the official conference program. The linked document is the program, not the paper full text.</p>
+            <div class="bibtex-box" data-bibtex="@inproceedings{shin2025leakage,&#10;  title={누적 분산 알고리즘을 통한 부채널 누수 평가 최적화},&#10;  author={신원근 and 전승현 and 김희석},&#10;  booktitle={2025년 한국정보보호학회 동계학술대회 (CISC-W 2025)},&#10;  year={2025},&#10;  note={In Korean; English title in author CV: Optimizing Side-Channel Leakage Assessment with Accumulated Distributed Algorithms},&#10;  url={https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf}&#10;}">@inproceedings{shin2025leakage,
+  title={누적 분산 알고리즘을 통한 부채널 누수 평가 최적화},
+  author={신원근 and 전승현 and 김희석},
+  booktitle={2025년 한국정보보호학회 동계학술대회 (CISC-W 2025)},
+  year={2025},
+  note={In Korean; English title in author CV: Optimizing Side-Channel Leakage Assessment with Accumulated Distributed Algorithms},
+  url={https://di0zxmb8pwajl.cloudfront.net/kiisc/conference/ciscs2025/ciscw2025_programbook_v6.pdf}
 }</div>
           </div>
         </div>
@@ -691,7 +700,6 @@
           </div>
         </div>
       </article>
-
     </div>
   </main>
 
@@ -703,6 +711,43 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    function selectTab(tab) {
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute("aria-selected", String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+      });
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectTab(tab));
+      tab.addEventListener("keydown", (event) => {
+        let next;
+        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") next = (index + tabs.length - 1) % tabs.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = tabs.length - 1;
+        if (next === undefined) return;
+        event.preventDefault();
+        selectTab(tabs[next]);
+        tabs[next].focus();
+      });
+    });
+    function revealLinkedPublication() {
+      const target = document.getElementById(window.location.hash.slice(1));
+      const panel = target && target.closest('[role="tabpanel"]');
+      if (!panel) return;
+      selectTab(document.getElementById(panel.getAttribute("aria-labelledby")));
+      requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+    }
+    selectTab(tabs[0]);
+    document.querySelector(".publication-tabs").hidden = false;
+    revealLinkedPublication();
+    window.addEventListener("hashchange", revealLinkedPublication);
   </script>
 
   <script>
