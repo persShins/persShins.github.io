@@ -140,25 +140,6 @@
       box-shadow: var(--shadow);
     }
 
-    .publication-with-image {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .publication-image {
-      width: 100%;
-      max-width: 260px;
-      height: 180px;
-      object-fit: contain;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: #f1f5f9;
-      padding: 8px;
-      justify-self: center;
-    }
-
     .publication-content {
       min-width: 0;
     }
@@ -342,7 +323,6 @@
         padding: 48px 0;
       }
 
-      .publication-with-image,
       .detail-grid {
         grid-template-columns: 1fr;
       }
@@ -351,11 +331,6 @@
         flex-direction: column;
       }
 
-      .publication-image {
-        width: 100%;
-        height: auto;
-        max-height: 260px;
-      }
     }
   </style>
   <link rel="stylesheet" href="site.css" />
@@ -470,13 +445,7 @@
         </div>
       </article>
 
-      <article class="publication publication-with-image" id="armor">
-        <img
-          class="publication-image"
-          src="Armor.png"
-          alt="ARMOR paper preview image"
-        />
-
+      <article class="publication" id="armor">
         <div class="publication-content">
           <div class="publication-heading">
             <div>
