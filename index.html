@@ -316,9 +316,11 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="site.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header>
     <div class="container">
       <nav>
@@ -327,21 +329,22 @@
           <a href="#about">About</a>
           <a href="#research">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="#projects">Projects</a>
+          <a href="#projects">Code</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <section class="hero" id="about">
       <div>
-        <h1>Cryptographic Implementation Security Researcher</h1>
+        <h1>WonGeun Shin</h1>
+        <p class="research-heading">Cryptographic Implementation Security</p>
         <p class="subtitle">
           I am a <strong>Ph.D. candidate at Korea University</strong>, advised by Prof. HeeSeok Kim.
           My research focuses on physical attacks and countermeasures for cryptographic implementations,
-          especially side-channel analysis, fault injection attacks, and post-quantum cryptography.
+          with a focus on post-quantum cryptography and secure neural-network implementations.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="publications.html">View Publications</a>
@@ -355,35 +358,54 @@
         <h2>WonGeun Shin</h2>
         <p>Ph.D. Candidate<br />Korea University</p>
         <div class="social-links">
-          <a href="https://github.com/persShins" target="_blank">GitHub</a>
-          <a href="https://scholar.google.com/citations?user=Z7xED00AAAA&user=Z7xED00AAAAJ" target="_blank">Google Scholar</a>
+          <a href="https://github.com/persShins" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=Z7xED00AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         </div>
       </aside>
     </section>
 
+    <section id="publications">
+      <h2 class="section-title">Selected Research</h2>
+      <div class="publication-list">
+        <article class="publication">
+          <div class="publication-title"><a href="https://eprint.iacr.org/2026/1344">Public Coefficient Matters: A Practical Differential Fault Attack on ML-DSA and HAETAE</a></div>
+          <div class="publication-authors"><strong>WonGeun Shin</strong>, SeungHyeon Jeon, Daehyeon Bae, Sujin Park, HeeSeok Kim</div>
+          <div class="publication-venue">IACR Cryptology ePrint Archive · 2026 · Preprint</div>
+          <p class="research-summary">Identifies challenge sampling as a practical fault-attack surface in ML-DSA and HAETAE, and studies fault-based key recovery and countermeasures.</p>
+          <div class="hero-actions"><a class="button" href="https://eprint.iacr.org/2026/1344">Paper</a><a class="button" href="publications.html#public-coefficient">Details &amp; BibTeX</a></div>
+        </article>
+        <article class="publication">
+          <div class="publication-title"><a href="https://doi.org/10.46586/tches.v2026.i2.106-131">ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks</a></div>
+          <div class="publication-authors"><strong>WonGeun Shin</strong>, JeongHwan Lee, Sangyun Jung, HeeSeok Kim</div>
+          <div class="publication-venue">CHES 2026</div>
+          <p class="research-summary">Develops first-order masked activation and ArgMax gadgets for side-channel resistant neural-network implementations.</p>
+          <div class="hero-actions"><a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131">Paper</a><a class="button" href="https://github.com/persShins/ARMOR">Code</a><a class="button" href="publications.html#armor">Details &amp; BibTeX</a></div>
+        </article>
+      </div>
+    </section>
     <section id="research">
       <h2 class="section-title">Research Interests</h2>
       <div class="grid">
         <div class="card">
-          <h3>Physical Attacks</h3>
-          <p>Side-channel analysis and fault injection attacks against cryptographic implementations.</p>
+          <h3>Side-Channel Analysis</h3>
+          <p>Leakage analysis and security evaluation of embedded cryptographic implementations.</p>
           <div class="tags">
             <span class="tag">SCA</span>
-            <span class="tag">Fault Attack</span>
-            <span class="tag">DFA</span>
+            <span class="tag">Leakage Assessment</span>
+            <span class="tag">Embedded Security</span>
           </div>
         </div>
         <div class="card">
-          <h3>Fault Attacks</h3>
-          <p>Security evaluation of lattice-based digital signatures(ML-DSA and HAETAE).</p>
+          <h3>Fault Attacks on PQC</h3>
+          <p>Fault injection attacks and countermeasures for lattice-based digital signatures, including ML-DSA and HAETAE.</p>
           <div class="tags">
             <span class="tag">ML-DSA</span>
             <span class="tag">HAETAE</span>
           </div>
         </div>
         <div class="card">
-          <h3>Countermeasures</h3>
-          <p>Design and evaluation of implementation-level protections for software and hardware.</p>
+          <h3>Masking &amp; Secure Inference</h3>
+          <p>Masking techniques for activation and ArgMax gadgets in side-channel resistant neural-network implementations.</p>
           <div class="tags">
             <span class="tag">Masking</span>
             <span class="tag">Hardware Security</span>
@@ -398,9 +420,8 @@
       <div class="news-list">
         <div class="news-item">
           <div class="news-date">2026</div>
-          <p>Public Coefficient Matters has been accepted at eprint.</p>
+          <p><a href="https://eprint.iacr.org/2026/1344">Public Coefficient Matters</a> is available as a preprint on IACR ePrint.</p>
         </div>
-      <div class="news-list">
         <div class="news-item">
           <div class="news-date">2026</div>
           <p>ARMOR has been accepted at CHES 2026.</p>
@@ -412,38 +433,12 @@
       </div>
     </section>
 
-    <section id="publications">
-      <h2 class="section-title">Selected Publications</h2>
-      <div class="publication-list">
-        <article class="publication">
-          <div class="publication-title">ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks</div>
-          <div class="publication-authors"><strong>WonGeun Shin</strong>, JeongHwan Lee, Sangyun Jung, HeeSeok Kim</div>
-          <div class="publication-venue"><strong>CHES 2026</strong>, To appear.</div>
-          <div class="tags">
-            <span class="tag">Cryptographic Implementation</span>
-            <span class="tag">Side-Channel Analysis</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="project-grid">
-        <div class="card">
-          <h3>Fault Attacks on PQC Signatures</h3>
-          <p>
-            Investigating how fault injection can affect challenge generation, randomness sampling,
-            and signing procedures in lattice-based digital signature schemes.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Side-Channel Evaluation Framework</h3>
-          <p>
-            Developing practical tools for trace acquisition, SNR analysis, CPA, and leakage assessment
-            on embedded cryptographic implementations.
-          </p>
-        </div>
+      <h2 class="section-title">Research Code</h2>
+      <div class="card">
+        <h3>ARMOR</h3>
+        <p>Explore the implementation accompanying our research on first-order masking for neural-network activation and ArgMax gadgets.</p>
+        <div class="hero-actions"><a class="button" href="https://github.com/persShins/ARMOR">View repository</a></div>
       </div>
     </section>
 
@@ -452,7 +447,7 @@
       <div class="card">
         <p>
           Email: <a href="mailto:shinryan9@korea.ac.kr">shinryan9@korea.ac.kr</a><br />
-          GitHub: <a href="https://github.com/persShins" target="_blank">github.com/persShins</a><br />
+          GitHub: <a href="https://github.com/persShins" target="_blank" rel="noopener">github.com/persShins</a><br />
           Affiliation: Korea University
         </p>
       </div>
