@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://persshins.github.io/sitemap.xml
