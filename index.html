@@ -94,9 +94,14 @@
     }
 
     .hero {
-      display: block;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      align-items: center;
+      gap: 40px;
       padding: 80px 0 60px;
     }
+
+    .profile-image { display: block; width: 100%; max-width: 240px; height: auto; border-radius: 18px; justify-self: center; }
 
     .hero h1 {
       font-size: clamp(2.3rem, 5vw, 4.4rem);
@@ -310,7 +315,7 @@
           <a class="button" href="https://scholar.google.com/citations?user=Z7xED00AAAAJ" target="_blank" rel="noopener"><svg class="scholar-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><text x="15" y="27" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" fill="currentColor">g</text><path d="M2 7 16 1l14 6-14 6L2 7Zm7 5v4c4 3 10 3 14 0v-4l-7 3-7-3Z" fill="currentColor"></path><path d="M28 8v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>Google Scholar</a>
         </div>
       </div>
-
+      <img class="profile-image" src="assets/images/profile/avatar.png" width="320" height="480" alt="An illustrated orange fox avatar wearing a green shirt." />
     </section>
 
     <section id="publications">
