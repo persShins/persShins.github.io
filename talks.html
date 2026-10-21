@@ -26,13 +26,17 @@
     .intro { color: var(--muted); font-size: 1.1rem; margin-bottom: 36px; }
     .talk { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
     .talk + .talk { margin-top: 24px; }
+    .talk { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+    .talk-content { min-width: 0; }
+    .talk-photo img { display: block; width: 100%; height: auto; border-radius: 10px; }
+    .talk-photo figcaption { margin-top: 8px; color: var(--muted); font-size: .85rem; }
     .talk time { display: block; color: var(--primary); font-weight: 700; margin-bottom: 10px; }
     .talk h2 { font-size: 1.4rem; line-height: 1.4; margin-bottom: 12px; overflow-wrap: anywhere; }
     .talk p { color: var(--muted); margin-bottom: 12px; }
     .button { display: inline-flex; padding: 10px 14px; margin-top: 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: .9rem; font-weight: 700; }
     .button:hover { color: var(--primary); border-color: var(--primary); text-decoration: none; }
     footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; }
-    @media (max-width: 850px) { main { padding: 40px 0; } .talk { padding: 22px; } }
+    @media (max-width: 850px) { main { padding: 40px 0; } .talk { padding: 22px; grid-template-columns: minmax(0, 1fr); gap: 20px; } }
   </style>
   <link rel="stylesheet" href="site.css" />
 </head>
@@ -57,6 +61,7 @@
     <h1>Talks</h1>
     <p class="intro">Talks and tutorials on side-channel analysis and implementation security.</p>
     <article class="talk" id="armor-ches-2026">
+      <div class="talk-content">
       <time datetime="2026-10-12">October 12, 2026</time>
       <h2>ARMOR: First-Order Masking of Activation and ArgMax Gadgets for Side-Channel Resistant Neural Networks</h2>
       <p>Won Geun Shin · Korea University</p>
@@ -64,13 +69,24 @@
       <a class="button" href="https://ches.iacr.org/2026/program.php" target="_blank" rel="noopener">Conference program</a>
       <a class="button" href="https://iacr.org/submit/files/slides/2026/tches/tches2026/2_14/2_14_slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
       <a class="button" href="https://doi.org/10.46586/tches.v2026.i2.106-131" target="_blank" rel="noopener">Paper</a>
+      </div>
+      <figure class="talk-photo">
+        <img src="talk-photo-placeholder.svg" width="640" height="416" alt="Illustration of a presentation stage; not an actual event photo." />
+        <figcaption>Presentation photo coming soon.</figcaption>
+      </figure>
     </article>
     <article class="talk" id="side-channel-tutorial-2025">
+      <div class="talk-content">
       <time datetime="2025-07-01">July 1, 2025</time>
       <h2>Side-Channel Countermeasures and Security Evaluation</h2>
       <p>Won Geun Shin · Korea University</p>
       <p>Side Channel Analysis Tutorial<br />8th Workshop on Side-Channel Information Analysis</p>
       <a class="button" href="https://manuscriptlink.com/society/kiisc/homepage/bbs/nn/article/4212" target="_blank" rel="noopener">Official event page</a>
+      </div>
+      <figure class="talk-photo">
+        <img src="talk-photo-placeholder.svg" width="640" height="416" alt="Illustration of a presentation stage; not an actual event photo." loading="lazy" />
+        <figcaption>Presentation photo coming soon.</figcaption>
+      </figure>
     </article>
   </main>
   <footer><div class="container">© <span id="year"></span> WonGeun Shin. Built with GitHub Pages.</div></footer>
