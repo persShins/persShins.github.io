@@ -371,6 +371,18 @@
       <button class="button" type="button" role="tab" id="tab-domestic" aria-controls="domestic" aria-selected="false" tabindex="-1">Domestic</button>
     </div>
     <div class="publication-list" id="international" role="tabpanel" aria-labelledby="tab-international" tabindex="0">
+      <article class="publication" id="date-2027-emfi">
+        <div class="publication-content">
+          <div class="publication-heading">
+            <div>
+              <div class="publication-title">Reliable Discovery of Fault-Inducing Configurations via Hybrid DE–GA Search for EMFI Parameter Optimization</div>
+              <div class="publication-authors">Jihun Yeom, <strong>WonGeun Shin</strong>, SeungHyeon Jeon, Donggeun Kwon and HeeSeok Kim</div>
+              <div class="publication-venue">Accepted at DATE 2027</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
       <article class="publication" id="public-coefficient">
 
         <div class="publication-content">
@@ -728,6 +740,8 @@
       const copyButton = card.querySelector(".bibtex-copy");
       const bibtexBox = card.querySelector(".bibtex-box");
       const status = card.querySelector(".copy-status");
+
+      if (!toggle || !details) return;
 
       details.id = card.id + "-details";
       toggle.setAttribute("aria-controls", details.id);
